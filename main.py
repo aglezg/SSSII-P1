@@ -7,9 +7,9 @@
 # - alu0101321219@ull.edu.es
 # -----------------------------------------------------
 
-# Menú principal
+from functions import *
 
-import functions
+# Menú principal
 
 option = ''
 
