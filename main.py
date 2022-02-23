@@ -33,6 +33,25 @@ def isABinaryString(bstring):
             return False
     return True
 
+# Transforma una cadena binaria en un array de cadenas binarias de cierta longitud
+def StringToArrayOfStringS(mystring, long = 8):
+    
+    myarray = []
+    aux_string = ""
+
+    if(isABinaryString(mystring)):
+        for letter in mystring:
+            aux_string += letter
+            if (len(aux_string) == long):
+                myarray.append(aux_string)
+                aux_string = ''
+
+        return myarray
+    
+    else:
+        return None
+
+
 # Menú principal
 def menu():
     print(" PRÁCTICA: CIFRADO DE VERNAM\n")
@@ -57,3 +76,5 @@ def menu():
 #    ascii_string+= ascii_character
 
 #print(ascii_string)
+
+print(StringToArrayOfStringS('010101010101010111111111'))
