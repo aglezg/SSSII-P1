@@ -1,3 +1,13 @@
+# ----------------------------------------------------------------------------------------
+# Práctica 1: Cifrado de Vernam
+# Asignatura: Seguridad en Sistemas Informáticos
+# Fecha de entrega: 24/02/2022
+# Autor:
+# - Adrián González Galván
+# - alu0101321219@ull.edu.es
+# ----------------------------------------------------------------------------------------
+# En este fichero se encuentran las funciones utilizadas para el desarrollo de la práctica.
+# ----------------------------------------------------------------------------------------
 
 import os
 
