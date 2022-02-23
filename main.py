@@ -66,6 +66,15 @@ def binaryStringToASCIIString(bstring):
 
     return ascii_string
 
+# Operación XOR entre cadenas de binario
+def bStringXORBString(bstring1, bstring2):
+
+    if (isABinaryString(bstring1) and isABinaryString(bstring2)):
+        numeric_result = int(bstring1, 2) ^ int(bstring2, 2)
+        return '{0:b}'.format(numeric_result)
+    else:
+        return None
+
 # Menú principal
 def menu():
     print(" PRÁCTICA: CIFRADO DE VERNAM\n")
