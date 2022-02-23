@@ -34,7 +34,7 @@ def isABinaryString(bstring):
     return True
 
 # Transforma una cadena binaria en un array de cadenas binarias de cierta longitud
-def StringToArrayOfStringS(mystring, long = 8):
+def stringToArrayOfStringS(mystring, long = 8):
     
     myarray = []
     aux_string = ""
@@ -51,6 +51,20 @@ def StringToArrayOfStringS(mystring, long = 8):
     else:
         return None
 
+# Convertir una cadena binaria en cadena ascii
+def binaryStringToASCIIString(bstring):
+
+    ascii_string = ''
+
+    if (isABinaryString(bstring)):
+        binary_array = stringToArrayOfStringS(bstring)
+        ascii_string = ''
+        for element in binary_array:
+            ascii_string += chr(int(element,2))
+    else:
+        return None
+
+    return ascii_string
 
 # Menú principal
 def menu():
@@ -76,5 +90,3 @@ def menu():
 #    ascii_string+= ascii_character
 
 #print(ascii_string)
-
-print(StringToArrayOfStringS('010101010101010111111111'))
