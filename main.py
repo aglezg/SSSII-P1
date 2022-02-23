@@ -85,21 +85,26 @@ def bStringXORBString(bstring1, bstring2):
         return None
 
 # Menú principal
-def menu():
     
-    option = ''
+option = ''
+
+while (option != 'exit'):
     
-    while (option != '0' and option != '1'):
-        cleanTerminal()
+    cleanTerminal()
+
+    while (option != 'o' and option != 'c' and option != 'exit'):
         print("\n PRÁCTICA: CIFRADO DE VERNAM\n")
-        print(" \t[0] Introducir mensaje original.")
-        print(" \t[1] Introducir mensaje cifrado.\n")
+        print(" \t[o] Introducir mensaje original.")
+        print(" \t[c] Introducir mensaje cifrado.")
+        print(" \t[exit] Finalizar el programa.\n")
         option = input(" \t> ")
     
-    if (option == '0'):
+    if (option == 'o'):
         option = 'original'
-    else:
+    elif (option == 'c'):
         option = 'cifrado'
+    else:
+        break
     
     message = input("\n\t >> Mensaje " + option + ": ")
     binary_message = stringToBinary(message)
@@ -110,6 +115,10 @@ def menu():
     
     while(not(isABinaryString(key)) or len(key) != len(binary_message)):
         key = input("\n\t >> Clave aleatoria: ")
+        if (not(isABinaryString(key))):
+            print("\t ¡OJO! La clave introducida no es una cadena binaria...")
+        elif (len(key) != len(binary_message)):
+            print("\t ¡OJO! La clave introducida no es del mismo tamaño que el mensaje...")
 
     binary_result = bStringXORBString(binary_message, key)
 
@@ -121,6 +130,4 @@ def menu():
     print("\n\t >> Mensaje " + option + " en binario: " + binary_result)
     print("\t >> Mensaje " + option + ": " + binaryStringToASCIIString(binary_result))
 
-
-# Main
-menu()
+    input("\n\n\n\t Press Enter to continue...")
