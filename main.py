@@ -7,6 +7,12 @@
 # - alu0101321219@ull.edu.es
 # -----------------------------------------------------
 
+import os
+
+# Limpia la pantalla de la terminal
+def cleanTerminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 # Comprueba si una variables es un string
 def isString(mystring):
     if (type(mystring) == str):
@@ -77,9 +83,10 @@ def bStringXORBString(bstring1, bstring2):
 
 # Menú principal
 def menu():
-    print(" PRÁCTICA: CIFRADO DE VERNAM\n")
+    cleanTerminal()
+    print("\n PRÁCTICA: CIFRADO DE VERNAM\n")
     print(" \t[0] Introducir mensaje original.")
-    print(" \t[1] Introducir mensaje crifrado.")
+    print(" \t[1] Introducir mensaje crifrado.\n")
     option = input(" \t> ")
 
 # Main
