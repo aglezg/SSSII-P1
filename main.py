@@ -15,6 +15,12 @@ def stringToBinary(mystring):
     else:
         return None
 
+# Comprueba si un string es una cadena binaria
+def isABinaryString(bstring):
+    for letter in bstring:
+        if (letter != '1' and letter != '0'):
+            return False
+    return True
 
 # Menú principal
 def menu():
@@ -24,7 +30,22 @@ def menu():
     option = input(" \t> ")
 
 
-original_m = input("Mensaje a cifrar > ")
+#original_m = input("Mensaje a cifrar > ")
 
-mensaje = stringToBinary(original_m)
-print ("MENSAJE = " + mensaje)
+#mensaje = stringToBinary(original_m)
+#mensaje = binaryToString(original_m)
+#print ("MENSAJE = " + mensaje)
+
+#binary_string = "0101001101010011"
+#binary_array = list(binary_string)
+#print(binary_array)
+#ascii_string = ""
+#for value in binary_array:
+#    integer = int(value,2)
+#    ascii_character = chr(integer)
+#    ascii_string+= ascii_character
+
+#print(ascii_string)
+
+mensaje = input(" > ")
+print(isABinaryString(mensaje))
