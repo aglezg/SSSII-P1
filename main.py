@@ -113,9 +113,13 @@ def menu():
 
     binary_result = bStringXORBString(binary_message, key)
 
+    if (option == 'original'):
+        option = 'cifrado'
+    else:
+        option = 'original'
+
     print("\n\t >> Mensaje " + option + " en binario: " + binary_result)
     print("\t >> Mensaje " + option + ": " + binaryStringToASCIIString(binary_result))
-
 
 
 # Main
