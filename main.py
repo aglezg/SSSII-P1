@@ -77,34 +77,46 @@ def bStringXORBString(bstring1, bstring2):
 
     if (isABinaryString(bstring1) and isABinaryString(bstring2)):
         numeric_result = int(bstring1, 2) ^ int(bstring2, 2)
-        return '{0:b}'.format(numeric_result)
+        binary_result = '{0:b}'.format(numeric_result)
+        while (len(binary_result) != len(bstring1) or len(binary_result) != len(bstring2)):
+            binary_result = '0' + binary_result
+        return binary_result
     else:
         return None
 
 # Menú principal
 def menu():
-    cleanTerminal()
-    print("\n PRÁCTICA: CIFRADO DE VERNAM\n")
-    print(" \t[0] Introducir mensaje original.")
-    print(" \t[1] Introducir mensaje crifrado.\n")
-    option = input(" \t> ")
+    
+    option = ''
+    
+    while (option != '0' and option != '1'):
+        cleanTerminal()
+        print("\n PRÁCTICA: CIFRADO DE VERNAM\n")
+        print(" \t[0] Introducir mensaje original.")
+        print(" \t[1] Introducir mensaje cifrado.\n")
+        option = input(" \t> ")
+    
+    if (option == '0'):
+        option = 'original'
+    else:
+        option = 'cifrado'
+    
+    message = input("\n\t >> Mensaje " + option + ": ")
+    binary_message = stringToBinary(message)
+    print("\t\t-> Mensaje " + option + " en binario: " + binary_message)
+    print("\t\t-> Longitud: " + str(len(binary_message)))
+
+    key = ''
+    
+    while(not(isABinaryString(key)) or len(key) != len(binary_message)):
+        key = input("\n\t >> Clave aleatoria: ")
+
+    binary_result = bStringXORBString(binary_message, key)
+
+    print("\n\t >> Mensaje " + option + " en binario: " + binary_result)
+    print("\t >> Mensaje " + option + ": " + binaryStringToASCIIString(binary_result))
+
+
 
 # Main
 menu()
-
-#original_m = input("Mensaje a cifrar > ")
-
-#mensaje = stringToBinary(original_m)
-#mensaje = binaryToString(original_m)
-#print ("MENSAJE = " + mensaje)
-
-#binary_string = "0101001101010011"
-#binary_array = list(binary_string)
-#print(binary_array)
-#ascii_string = ""
-#for value in binary_array:
-#    integer = int(value,2)
-#    ascii_character = chr(integer)
-#    ascii_string+= ascii_character
-
-#print(ascii_string)
