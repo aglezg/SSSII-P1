@@ -7,33 +7,16 @@
 # - alu0101321219@ull.edu.es
 # -----------------------------------------------------
 
-import binascii
-from ctypes import sizeof
-from tokenize import Number
+# Convertir de string a binario
+def stringToBinary(mystring):
 
-# Convertir de ASCII a binario
-def fromASCIIToBinary(ascii):
-    
-    if (type(ascii) == str):
-        
-        byte_array = ascii.encode()
-        binary_int = int.from_bytes(byte_array, 'big')
-        binary_string = bin(binary_int)
-    
-        binary_string = binary_string.replace('b', '') # ------------------
-
-        while len(binary_string) % 8:
-            binary_string = '0' + binary_string        # ------------------ encapsular en función?
-
-        return binary_string
-
+    if (type(mystring) == str):
+        return ''.join(format(ord(i), '08b') for i in mystring)
     else:
-
         return None
 
 
 # Menú principal
-
 def menu():
     print(" PRÁCTICA: CIFRADO DE VERNAM\n")
     print(" \t[0] Introducir mensaje original.")
@@ -42,3 +25,6 @@ def menu():
 
 
 original_m = input("Mensaje a cifrar > ")
+
+mensaje = stringToBinary(original_m)
+print ("MENSAJE = " + mensaje)
