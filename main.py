@@ -82,6 +82,8 @@ def menu():
     print(" \t[1] Introducir mensaje crifrado.")
     option = input(" \t> ")
 
+# Main
+menu()
 
 #original_m = input("Mensaje a cifrar > ")
 
