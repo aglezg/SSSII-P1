@@ -7,16 +7,27 @@
 # - alu0101321219@ull.edu.es
 # -----------------------------------------------------
 
+# Comprueba si una variables es un string
+def isString(mystring):
+    if (type(mystring) == str):
+        return True
+    else:
+        return False
+
 # Convertir de string a binario
 def stringToBinary(mystring):
 
-    if (type(mystring) == str):
+    if (isString(mystring)):
         return ''.join(format(ord(i), '08b') for i in mystring)
     else:
         return None
 
 # Comprueba si un string es una cadena binaria
 def isABinaryString(bstring):
+
+    if (not(isString(bstring))):
+        return False
+
     for letter in bstring:
         if (letter != '1' and letter != '0'):
             return False
@@ -46,6 +57,3 @@ def menu():
 #    ascii_string+= ascii_character
 
 #print(ascii_string)
-
-mensaje = input(" > ")
-print(isABinaryString(mensaje))
