@@ -13,6 +13,9 @@
   - Adrián González Galván
   - alu0101321219@ull.edu.es
 
+## Compilación
+- python3 main.py
+
 ## Referencias
 - [How to convert string to binary?](https://stackoverflow.com/questions/18815820/how-to-convert-string-to-binary)
 - [Funciones ord y chr en Python](https://parzibyte.me/blog/2018/12/10/ord-chr-python/#Para_que_sirven_ord_y_chr_en_Python)
