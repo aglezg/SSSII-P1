@@ -11,7 +11,7 @@
 
 from functions import *
 
-# Menú principal
+# Main
 
 option = ''
 
@@ -19,6 +19,7 @@ while (option != 'exit'):
     
     cleanTerminal()
 
+    # Menú principal  y lectura de opciones
     while (option != 'o' and option != 'c' and option != 'exit'):
         print("\n PRÁCTICA: CIFRADO DE VERNAM\n")
         print(" \t[o] Introducir mensaje original.")
@@ -33,13 +34,15 @@ while (option != 'exit'):
     else:
         break
     
+    # Introduce el mensaje a cifrar/descifrar
     message = input("\n\t >> Mensaje " + option + ": ")
     binary_message = stringToBinary(message)
     print("\t\t-> Mensaje " + option + " en binario: " + binary_message)
     print("\t\t-> Longitud: " + str(len(binary_message)))
 
     key = ''
-    
+
+    # Lectura de la clave a utilizar    
     while(not(isABinaryString(key)) or len(key) != len(binary_message)):
         key = input("\n\t >> Clave aleatoria: ")
         if (not(isABinaryString(key))):
@@ -47,6 +50,7 @@ while (option != 'exit'):
         elif (len(key) != len(binary_message)):
             print("\t ¡OJO! La clave introducida no es del mismo tamaño que el mensaje...")
 
+    # Operación XOR
     binary_result = bStringXORBString(binary_message, key)
 
     if (option == 'original'):
@@ -54,6 +58,7 @@ while (option != 'exit'):
     else:
         option = 'original'
 
+    # Salida del programa
     print("\n\t >> Mensaje " + option + " en binario: " + binary_result)
     print("\t >> Mensaje " + option + ": " + binaryStringToASCIIString(binary_result))
 
