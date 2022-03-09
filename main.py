@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------
-# Práctica 1: Cifrado de Vernam
+# Práctica 1: Cifrado de Vernam.
 # Asignatura: Seguridad en Sistemas Informáticos
 # Fecha de entrega: 24/02/2022
 # Autor:
